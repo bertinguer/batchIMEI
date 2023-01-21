@@ -7,7 +7,7 @@ La primera línea del input no se procesa
 
 ## Requisitos
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 ## Uso
 
