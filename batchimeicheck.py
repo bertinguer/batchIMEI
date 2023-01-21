@@ -1,6 +1,7 @@
 import csv
 import sys
 
+# Calcula el digito de control del imei
 def calculate_check_digit(imei):
     imei = str(imei)
     check_digit = 0
@@ -15,12 +16,14 @@ def calculate_check_digit(imei):
     check_digit = (10 - (check_digit % 10)) % 10
     return check_digit
 
+# Obtiene el imei valido
 def is_valid_imei(imei):
     imei = str(imei)[:14]
     check_digit = calculate_check_digit(imei)
     imei = imei + str(check_digit)
     return imei
 
+# Procesa el archivo csv
 def process_csv(input_file, output_file):
     with open(input_file, 'r') as f_in, open(output_file, 'w', newline='') as f_out:
         reader = csv.reader(f_in)
